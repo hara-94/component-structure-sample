@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { Button } from "~/ui/button";
+import { Button } from "~/ui/button/base";
 
 const variants = {
   primary: css`

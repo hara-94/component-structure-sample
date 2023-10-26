@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
-import { useButton } from "~/ui/button/logic";
-import { ButtonProps } from "~/ui/button/types";
+import { useButton } from "~/ui/button/base/logic";
+import { ButtonProps } from "~/ui/button/base/types";
 import { VStack } from "~/ui/common/VStack";
 
 const common = css`

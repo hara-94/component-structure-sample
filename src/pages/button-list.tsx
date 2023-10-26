@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { HStack } from "~/ui/common/HStack";
 import { VStack } from "~/ui/common/VStack";
-import { Button } from "~/ui/button";
+import { Button } from "~/ui/button/base";
 import { T2Button } from "~/ui/button/2";
 import { T3Button } from "~/ui/button/3";
 
