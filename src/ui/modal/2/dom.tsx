@@ -3,25 +3,21 @@ import { HStack } from "~/ui/common/HStack";
 import { BaseButton } from "~/ui/button/base";
 import { BaseModalElements } from "~/ui/modal/base/dom";
 import { BaseModalProps } from "~/ui/modal/base/types";
+import { common, size } from "~/ui/modal/2/style";
+
+const T2Modal = styled(BaseModalElements.Modal)`
+  ${(props) => size[props.size]}
+`;
 
 const T2Header = styled(BaseModalElements.Header)<BaseModalProps>`
-  background: linear-gradient(#e66465, #9198e5);
-
-  ${(props) => {
-    switch (props.size) {
-      case "xl":
-        return "95%";
-      default:
-        return "fit-content";
-    }
-  }}
+  ${common}
 `;
 
 export const T2ModalDom = (props: BaseModalProps) => {
   return (
     <>
       <BaseModalElements.Overlay />
-      <BaseModalElements.Modal {...props}>
+      <T2Modal {...props}>
         <T2Header>{props.headerContent}</T2Header>
         <BaseModalElements.Body>{props.bodyContent}</BaseModalElements.Body>
         <BaseModalElements.Footer>
@@ -32,7 +28,7 @@ export const T2ModalDom = (props: BaseModalProps) => {
             </BaseButton>
           </HStack>
         </BaseModalElements.Footer>
-      </BaseModalElements.Modal>
+      </T2Modal>
     </>
   );
 };
