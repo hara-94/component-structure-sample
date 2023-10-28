@@ -4,6 +4,7 @@ import { VStack } from "~/ui/common/VStack";
 import { H1 } from "~/ui/common/H1";
 import { BaseModal } from "~/ui/modal/base";
 import { T2Modal } from "~/ui/modal/2";
+import { T3Modal } from "~/ui/modal/3";
 import { BaseButton } from "~/ui/button/base";
 
 const PageModalList = () => {
@@ -12,6 +13,8 @@ const PageModalList = () => {
   const { isOpen: isOpen3, open: open3, close: close3 } = useModal();
   const { isOpen: isOpen4, open: open4, close: close4 } = useModal();
   const { isOpen: isOpen5, open: open5, close: close5 } = useModal();
+  const { isOpen: isOpen6, open: open6, close: close6 } = useModal();
+  const { isOpen: isOpen7, open: open7, close: close7 } = useModal();
 
   return (
     <VStack $padding="40px" $gap={32}>
@@ -32,14 +35,18 @@ const PageModalList = () => {
         <BaseButton $variant="primary" onClick={open5}>
           open5
         </BaseButton>
-        <BaseButton $variant="secondary">open6</BaseButton>
-        <BaseButton $variant="primary">open7</BaseButton>
+        <BaseButton $variant="secondary" onClick={open6}>
+          open6
+        </BaseButton>
+        <BaseButton $variant="primary" onClick={open7}>
+          open7
+        </BaseButton>
         <BaseButton $variant="secondary">open8</BaseButton>
       </HStack>
       <BaseModal
         isOpen={isOpen1}
         size="xl"
-        headerContent="サイズ:xl"
+        headerContent="Base eサイズ:xl"
         bodyContent={
           <div>
             size = xlのモーダルです。
@@ -56,7 +63,7 @@ const PageModalList = () => {
       <BaseModal
         isOpen={isOpen2}
         size="md"
-        headerContent="サイズ:md"
+        headerContent="Base サイズ:md"
         bodyContent={
           <div>
             size = mdのモーダルです。
@@ -73,7 +80,7 @@ const PageModalList = () => {
       <BaseModal
         isOpen={isOpen3}
         size="sm"
-        headerContent="サイズ:sm"
+        headerContent="Base サイズ:sm"
         bodyContent={
           <div>
             size = smのモーダルです。
@@ -110,6 +117,25 @@ const PageModalList = () => {
         isOpen={isOpen5}
         size="xl"
         headerContent="T2 サイズ:xl"
+        bodyContent={
+          <div>
+            styleのみ違うモーダルです。
+            <br />
+            size = xlのモーダルです。
+            <br />
+            size = xlのモーダルです。size = xlのモーダルです。
+            <br />
+            size = xlのモーダルです。size = xlのモーダルです。
+          </div>
+        }
+        footerLabel="click"
+        footerCancelLabel="キャンセル"
+        onClickCancel={close5}
+      />
+      <T3Modal
+        isOpen={isOpen6}
+        size="xl"
+        headerContent="T3 サイズ:xl"
         bodyContent={
           <div>
             styleのみ違うモーダルです。
