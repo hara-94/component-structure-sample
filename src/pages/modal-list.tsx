@@ -3,6 +3,7 @@ import { HStack } from "~/ui/common/HStack";
 import { VStack } from "~/ui/common/VStack";
 import { H1 } from "~/ui/common/H1";
 import { BaseModal } from "~/ui/modal/base";
+import { T2Modal } from "~/ui/modal/2";
 import { BaseButton } from "~/ui/button/base";
 
 const PageModalList = () => {
@@ -25,8 +26,12 @@ const PageModalList = () => {
         <BaseButton $variant="primary" onClick={open3}>
           open3
         </BaseButton>
-        <BaseButton $variant="secondary">open4</BaseButton>
-        <BaseButton $variant="primary">open5</BaseButton>
+        <BaseButton $variant="secondary" onClick={open4}>
+          open4
+        </BaseButton>
+        <BaseButton $variant="primary" onClick={open5}>
+          open5
+        </BaseButton>
         <BaseButton $variant="secondary">open6</BaseButton>
         <BaseButton $variant="primary">open7</BaseButton>
         <BaseButton $variant="secondary">open8</BaseButton>
@@ -81,6 +86,44 @@ const PageModalList = () => {
         footerLabel="click"
         footerCancelLabel="キャンセル"
         onClickCancel={close3}
+      />
+      <T2Modal
+        isOpen={isOpen4}
+        size="sm"
+        headerContent="T2 サイズ:sm"
+        bodyContent={
+          <div>
+            styleのみ違うモーダルです。
+            <br />
+            size = smのモーダルです。
+            <br />
+            size = smのモーダルです。size = smのモーダルです。
+            <br />
+            size = smのモーダルです。size = smのモーダルです。
+          </div>
+        }
+        footerLabel="click"
+        footerCancelLabel="キャンセル"
+        onClickCancel={close4}
+      />
+      <T2Modal
+        isOpen={isOpen5}
+        size="xl"
+        headerContent="T2 サイズ:xl"
+        bodyContent={
+          <div>
+            styleのみ違うモーダルです。
+            <br />
+            size = xlのモーダルです。
+            <br />
+            size = xlのモーダルです。size = xlのモーダルです。
+            <br />
+            size = xlのモーダルです。size = xlのモーダルです。
+          </div>
+        }
+        footerLabel="click"
+        footerCancelLabel="キャンセル"
+        onClickCancel={close5}
       />
     </VStack>
   );

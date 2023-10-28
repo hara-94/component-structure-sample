@@ -2,47 +2,37 @@ import { styled } from "styled-components";
 import { BaseButton } from "~/ui/button/base";
 import { HStack } from "~/ui/common/HStack";
 import { BaseModalProps } from "~/ui/modal/base/types";
+import { common, size } from "~/ui/modal/base/style";
 
 const Modal = styled.div<BaseModalProps>`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 8px;
-  background-color: white;
+  ${common.modal}
 
   width: ${(props) => {
     switch (props.size) {
       case "xl":
-        return "80%";
+        return size.xl;
       case "md":
-        return "50%";
+        return size.md;
       case "sm":
-        return "30%";
+        return size.sm;
     }
   }};
 `;
 
 const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100dvh;
-  background-color: black;
-  opacity: 0.3;
+  ${common.overlay}
 `;
 
 const Header = styled.div`
-  padding: 16px 8px;
+  ${common.header}
 `;
 
 const Body = styled.div`
-  padding: 16px;
+  ${common.body}
 `;
 
 const Footer = styled.div`
-  padding: 16px 8px;
+  ${common.footer}
 `;
 
 export const BaseModalDom = (props: BaseModalProps) => {
@@ -53,6 +43,12 @@ export const BaseModalDom = (props: BaseModalProps) => {
         <Header>{props.headerContent}</Header>
         <Body>{props.bodyContent}</Body>
         <Footer>
+          {/* NOTE: これより下のDOM構造をコンポーネントで定義して、BaseModalElementsとして
+                    共通化してexportした方がいい
+          　　　　　　styleのみ違うコンポーネントの場合に、ここだけ各コンポーネント内で
+          　　　　　　ハードコードだと、管理コストが増加するため
+                    だけど、そこまでやるの割と仰々しい気もしていて悩み中
+           */}
           <HStack $justify="flex-end">
             <BaseButton $variant="primary">{props.footerLabel}</BaseButton>
             <BaseButton $variant="secondary" onClick={props.onClickCancel}>
@@ -65,10 +61,23 @@ export const BaseModalDom = (props: BaseModalProps) => {
   );
 };
 
+// やるならこんな感じ
+// const FooterContent = (props: BaseModalProps) => {
+//   return (
+//     <HStack $justify="flex-end">
+//       <BaseButton $variant="primary">{props.footerLabel}</BaseButton>
+//       <BaseButton $variant="secondary" onClick={props.onClickCancel}>
+//         {props.footerCancelLabel}
+//       </BaseButton>
+//     </HStack>
+//   );
+// };
+
 export const BaseModalElements = {
   Overlay,
   Modal,
   Header,
   Body,
   Footer,
+  // FooterContent
 };
