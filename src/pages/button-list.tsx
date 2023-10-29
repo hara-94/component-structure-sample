@@ -1,13 +1,9 @@
-import styled from "styled-components";
-
 import { HStack } from "~/ui/common/HStack";
 import { VStack } from "~/ui/common/VStack";
 import { H1 } from "~/ui/common/H1";
 import { H2 } from "~/ui/common/H2";
 import { BaseButton } from "~/ui/Button/base";
 import { Button2 } from "~/ui/Button/2";
-// import { T2Button } from "~/ui/button/2";
-// import { T3Button } from "~/ui/button/3";
 
 // とにかくlogic, style, domを分離する
 const PageButtonList = () => {
