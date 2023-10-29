@@ -9,9 +9,6 @@ const Container = styled.div`
 export default function Home() {
   return (
     <Container>
-      <Link href="/top?template=1">/template1top</Link>
-      <Link href="/top?template=2">/template2top</Link>
-      <Link href="/top?template=3">/template3top</Link>
       <Link href="/button-list">/button-list</Link>
       <Link href="/modal-list">/modal-list</Link>
       <Link href="/file-upload">/file-upload</Link>
