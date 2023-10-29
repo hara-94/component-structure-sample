@@ -5,7 +5,7 @@ import { H1 } from "~/ui/common/H1";
 import { BaseModal } from "~/ui/modal/base";
 import { T2Modal } from "~/ui/modal/2";
 import { T3Modal } from "~/ui/modal/3";
-import { BaseButton } from "~/ui/button/base";
+import { BaseButton } from "~/ui/Button/base";
 
 const PageModalList = () => {
   const { isOpen: isOpen1, open: open1, close: close1 } = useModal();

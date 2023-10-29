@@ -1,4 +1,4 @@
-import { BaseButtonProps } from "~/ui/button/base/types";
+import { BaseButtonProps } from "~/ui/Button/base/types";
 
 export const useBaseButton = (props: BaseButtonProps) => {
   return {};

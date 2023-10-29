@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { BaseButton } from "~/ui/button/base";
+import { BaseButton } from "~/ui/Button/base";
 import { HStack } from "~/ui/common/HStack";
 import { BaseModalProps } from "~/ui/modal/base/types";
 import { common, size } from "~/ui/modal/base/style";

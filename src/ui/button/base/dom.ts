@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { variants, common } from "~/ui/button/base/style";
-import { BaseButtonProps } from "~/ui/button/base/types";
+import { variants, common } from "~/ui/Button/base/style";
+import { BaseButtonProps } from "~/ui/Button/base/types";
 
 export const BaseButtonDom = styled.button<BaseButtonProps>`
   ${common}

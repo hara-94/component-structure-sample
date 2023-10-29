@@ -10,6 +10,7 @@ export const variants = {
   primary: css`
     background-color: lightblue;
     color: white;
+    border: none;
   `,
   secondary: css`
     background-color: white;
