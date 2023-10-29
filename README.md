@@ -128,6 +128,7 @@ componentを構成しているファイルが多いので複雑に見えます�
 - dom.ts -> vueファイル
 - style.ts -> scssファイル
 - index.tsx -> tsファイル
+
 のようなイメージです。
 <br />
 dom/logic/styleは基本的にはそれぞれ独立しています。言い換えるとこれらのパーツを好きに組み合わせることでcomponentを作れるような状態を目指しています。
