@@ -11,9 +11,5 @@ export const useBaseFileUploadLogic = (props: BaseFileUploadProps) => {
     [props.maxFileMb]
   );
 
-  const delegateClickToInput = useCallback((input: HTMLInputElement) => {
-    input.click();
-  }, []);
-
-  return { validateFileSizeAndAlertIfNeeded, delegateClickToInput };
+  return { validateFileSizeAndAlertIfNeeded };
 };
