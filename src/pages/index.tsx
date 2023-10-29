@@ -14,6 +14,7 @@ export default function Home() {
       <Link href="/top?template=3">/template3top</Link>
       <Link href="/button-list">/button-list</Link>
       <Link href="/modal-list">/modal-list</Link>
+      <Link href="/file-upload">/file-upload</Link>
     </Container>
   );
 }
