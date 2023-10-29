@@ -1,13 +1,28 @@
-## WIP: コンポーネント設計思想PoC
+# WIP: コンポーネント設計思想PoC
 
-### 想定しているコンポーネントのバリエーション
-- ベースとなるStyle, DOM, Logicを持つコンポーネント(Base Component)
-- Base ComponentとStyleのみ違うコンポーネント
-- Base ComponentとDOMのみ違うコンポーネント
-- Base ComponentとLogicのみ違うコンポーネント
+## 基本的な設計
+### DOMが一個の場合(Atom層にあたる)
+```
+src
+└ ui
+  └ Button
+    └ base
+      └ types.ts
+      └ style.ts
+      └ logic.ts
+      └ dom.ts
+      └ index.tsx
+```
+#### 各ファイルの責務
+- types.ts
+  - Propsや、それに付随する型定義
+- style.ts
+  - DOMに当てるcssの定義
+- logic.ts
+  - コンポーネントが持ちうる全てのロジックをobjectで返す。**特定のDOMやstyleに依存しないようにロジックを記述する**
+- dom.ts
+  - style.tsから各styleをimportしてきて、styleをあてたDOMを返す。ロジックは持たず、受け取ったPropsをそのままDOMに渡す
+- index.tsx
+  - dom.tsとlogic.tsを組み合わせて、実際に使用するコンポーネントを返す
 
-### Style/DOM/Logicをとにかく疎結合に保つ
-- Style
-- DOM
-- Logic
-### 設計・書き方を統一するための自動生成
+## 設計・書き方を統一するための自動生成
