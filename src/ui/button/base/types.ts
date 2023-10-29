@@ -1,11 +1,5 @@
-import { ComponentPropsWithoutRef, MouseEventHandler } from "react";
+import { ComponentPropsWithoutRef } from "react";
 
-type Props = {
+export interface BaseButtonProps extends ComponentPropsWithoutRef<"button"> {
   $variant: "primary" | "secondary";
-  $isLoading?: boolean;
-  $isError?: boolean;
-};
-
-export interface ButtonProps
-  extends Omit<ComponentPropsWithoutRef<"button">, keyof Props>,
-    Props {}
+}

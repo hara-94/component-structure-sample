@@ -1,32 +1,9 @@
-import styled, { css } from "styled-components";
+import { Button2Dom } from "~/ui/Button/2/dom";
+import { useBaseButton } from "~/ui/Button/base/logic";
+import { BaseButtonProps } from "~/ui/Button/base/types";
 
-import { Button } from "~/ui/button/base";
+export const Button2 = (props: BaseButtonProps) => {
+  const logic = useBaseButton(props);
 
-const variants = {
-  primary: css`
-    border: 2px dashed lightblue;
-  `,
-  secondary: css`
-    border: 2px dotted lightblue;
-  `,
+  return <Button2Dom {...props}></Button2Dom>;
 };
-
-// baseのbuttonのstyleのみ上書き
-// baseのbuttonのcssと諸々競合するので注意
-export const T2Button = styled(Button)`
-  && {
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border-radius: 50%;
-
-    ${(props) => {
-      switch (props.$variant) {
-        case "primary":
-          return variants.primary;
-        case "secondary":
-          return variants.secondary;
-      }
-    }}
-  }
-`;
